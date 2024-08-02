@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .core.config import settings
 from .database.session import engine
-from .database.base_class import Base 
+from .database.base import Base 
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
