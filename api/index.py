@@ -1,7 +1,8 @@
 from fastapi import FastAPI
+from .core.config import settings
 
-app = FastAPI()
+app = FastAPI(title=settings.PROJECT_TITLE, version=settings.PROJECT_VERSION)
 
-@app.get("/api/python")
+@app.get("/")
 def hello_world():
-    return {"message": "Hello World"}
+    return {"Message": "Hello Binadamu"}
